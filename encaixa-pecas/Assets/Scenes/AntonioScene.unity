@@ -113,6 +113,34 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &43010490
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 43010491}
+  m_Layer: 0
+  m_Name: SpawnPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &43010491
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 43010490}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 6, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &487996046
 GameObject:
   m_ObjectHideFlags: 0
@@ -137,18 +165,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 487996046}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 32c83c306786c654db1e208218bfc56e, type: 3}
+  m_Script: {fileID: 11500000, guid: 35722d2d69aaf4744aa71e8bea66da62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  blockPrefab: {fileID: 0}
-  spawnPosition: {fileID: 0}
+  blockPrefab: {fileID: 1462405206015354, guid: 4e6a23c088d0fc24fa4f740f87ae6399,
+    type: 2}
+  spawnPosition: {fileID: 43010491}
   score: 0
-  firstColor: {r: 0, g: 0, b: 0, a: 0}
-  firstColorName: 
-  secondColor: {r: 0, g: 0, b: 0, a: 0}
-  secondColorName: 
-  thirdColor: {r: 0, g: 0, b: 0, a: 0}
-  thirdColorName: 
+  firstColor: {r: 0, g: 1, b: 1, a: 1}
+  secondColor: {r: 1, g: 0, b: 1, a: 1}
+  thirdColor: {r: 1, g: 1, b: 0, a: 1}
+  spawnTimer: 3
+  blockRotation: 90
 --- !u!4 &487996048
 Transform:
   m_ObjectHideFlags: 0
@@ -239,7 +267,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &1023125480
+--- !u!1001 &1844178731
 Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
