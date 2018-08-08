@@ -1,10 +1,15 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
-public class GameManager : MonoBehaviour {
+public class Manager : MonoBehaviour {
 
-    public static GameManager instance;
+    public static Manager instance;
     public GameObject blockPrefab;
     public Transform spawnPosition;
+
+    [SerializeField]
+    private int score = 0;
 
     [Header("Color #1")]
     public Color firstColor;
@@ -19,7 +24,7 @@ public class GameManager : MonoBehaviour {
     public string thirdColorName;
 
     void Awake() {
-        instance = self;
+        instance = this;
     }
 
     void Update() {
@@ -28,7 +33,8 @@ public class GameManager : MonoBehaviour {
 
     public void spawnRandomColorBlock() {
         int index = Random.Range(0, 3);
-        SpriteRenderer blockRenderer = Instantiate(blockPrefab, spawnPosition.position, Quaternion.identity) as SpriteRenderer;
+        GameObject block = GameObject.Instantiate(blockPrefab, spawnPosition.position, Quaternion.identity) as GameObject;
+        SpriteRenderer blockRenderer = block.GetComponent<SpriteRenderer>();
         switch (index)
         {
             case 0:
