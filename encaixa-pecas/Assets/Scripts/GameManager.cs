@@ -1,11 +1,25 @@
 using UnityEngine;
+using TMPro;
 
 public class GameManager : MonoBehaviour {
 
+    #region Singleton
     public static GameManager instance;
+    
+    void Awake() {
+        instance = this;
+    }
+    #endregion
+
+    [Header("Objects references")]
+    public TextMeshProUGUI scoreText;
     public GameObject blockPrefab;
     public Transform spawnPosition;
 
+    public GameObject GameOverCanvas;
+    public TextMeshProUGUI finalScoreText;
+
+    [Header("Game info")]
     [SerializeField]
     int score;
 
@@ -27,10 +41,16 @@ public class GameManager : MonoBehaviour {
     public float spawnTimer = 3f;
     private float spawnCooldown = 0f;
     public float blockRotation = 10f;
-    
-    void Awake() {
-        instance = this;
+
+    [Header("Sounds")]
+    public GameObject pointSound;
+    public GameObject gameOverSound;
+
+
+    void Start() {
+        GameOverCanvas.SetActive(false);
     }
+
 
     public Color[] getListColors() {
         return new Color[]{firstColor, secondColor, thirdColor};
@@ -74,12 +94,24 @@ public class GameManager : MonoBehaviour {
     }
 
     public void GameOver() {
-        Debug.Log("GAME OVER");
+        if (gameOver) {
+            return;
+        }
+        Instantiate(gameOverSound, transform.position, Quaternion.identity);
+        gameOver = true;
+        CameraShake.instance.Shake(1f, 1f, 0.2f);
+        finalScoreText.SetText(string.Format(finalScoreText.text, score));
+        GameOverCanvas.SetActive(true);
+        GameOverCanvas.GetComponent<Animator>().Play("gameOver");
     }
 
     public void scorePoint(int point) {
+        if (gameOver) {
+            return;
+        }
+        Instantiate(pointSound, transform.position, Quaternion.identity);
         Debug.Log("Scored "+point+" point(s).");
         score += point;
+        scoreText.SetText(score.ToString());
     }
-
 }
