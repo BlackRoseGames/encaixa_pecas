@@ -1,4 +1,5 @@
 using UnityEngine.SceneManagement;
+using System.Collections;
 using UnityEngine;
 using TMPro;
 
@@ -13,12 +14,16 @@ public class GameManager : MonoBehaviour {
     #endregion
 
     [Header("Objects references")]
-    public TextMeshProUGUI scoreText;
     public GameObject blockPrefab;
     public Transform spawnPosition;
-
     public GameObject GameOverCanvas;
+    public Animator TransitionAnimator;
+
+    [Header("Text References")]
+    public TextMeshProUGUI scoreText;
+    public TextMeshProUGUI highScoreText;
     public TextMeshProUGUI finalScoreText;
+
 
     [Header("Game info")]
     [SerializeField]
@@ -36,22 +41,23 @@ public class GameManager : MonoBehaviour {
     public Color thirdColor;
     string thirdColorName = "Color3";
 
-    private bool gameOver = false;
     [Header("Block Infos")]
-
     public float spawnTimer = 3f;
     private float spawnCooldown = 0f;
     public float blockRotation = 10f;
 
     [Header("Sounds")]
-    public GameObject pointSound;
-    public GameObject gameOverSound;
+    public AudioSource pointSound;
+    public AudioSource gameOverSound;
 
+    private bool gameOver = false;
+    private bool reseting = false;
+    private int highscore = 0;
 
     void Start() {
         GameOverCanvas.SetActive(false);
+        highscore = PlayerPrefs.GetInt("highscore");
     }
-
 
     public Color[] getListColors() {
         return new Color[]{firstColor, secondColor, thirdColor};
@@ -89,7 +95,6 @@ public class GameManager : MonoBehaviour {
                 block.tag = secondColorName;
                 blockRenderer.color = secondColor;
                 blockTrail.startColor = secondColor;
-
                 break;
             case 2:
                 block.tag = thirdColorName;
@@ -103,10 +108,15 @@ public class GameManager : MonoBehaviour {
         if (gameOver) {
             return;
         }
-        Instantiate(gameOverSound, transform.position, Quaternion.identity);
+        gameOverSound.Play();
         gameOver = true;
         CameraShake.instance.Shake(1f, 1f, 0.2f);
+        if (score > highscore) {
+            highscore = score;
+            PlayerPrefs.SetInt("highscore", highscore);
+        }
         finalScoreText.SetText(string.Format(finalScoreText.text, score));
+        highScoreText.SetText(string.Format(highScoreText.text, highscore));
         GameOverCanvas.SetActive(true);
         GameOverCanvas.GetComponent<Animator>().Play("gameOver");
     }
@@ -115,13 +125,22 @@ public class GameManager : MonoBehaviour {
         if (gameOver) {
             return;
         }
-        Instantiate(pointSound, transform.position, Quaternion.identity);
+        pointSound.Play();
         Debug.Log("Scored "+point+" point(s).");
         score += point;
         scoreText.SetText(score.ToString());
     }
 
     public void RestartScene() {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        if (!reseting) {
+            TransitionAnimator.Play("transitionIn");
+            reseting = true;
+            StartCoroutine(RestartSceneTimer(1f));
+        }
     }
+
+     private IEnumerator RestartSceneTimer(float waitTime) {
+        yield return new WaitForSeconds(waitTime);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+     }
 }
