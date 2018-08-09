@@ -1,16 +1,12 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 public class PlayerPiece : MonoBehaviour {
 
-	private SpriteRenderer renderer;
 	string tagForCollision;
 
-	void Start() {
-		renderer = GetComponent<SpriteRenderer>();
-	}
-
 	public void SetColor(Color color) {
-		renderer.color = color;
+		GetComponent<SpriteRenderer>().color = color;
 	}
 
 	public void SetTagCollider(string tag) {

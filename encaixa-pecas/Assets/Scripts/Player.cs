@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+using System.Collections;
 using UnityEngine;
 using Pixelplacement;
 
@@ -5,7 +7,6 @@ public class Player : MonoBehaviour {
 
 
     public float switchSpeedInSeconds = 0.2f;
-    int position = 1;
 
     void Start() {
         PlayerPiece[] pieces = GetComponentsInChildren<PlayerPiece>();
@@ -19,17 +20,16 @@ public class Player : MonoBehaviour {
         }
     }
     void Update() {
-        if(Input.GetKeyDown(KeyCode.LeftArrow) && position > 0) {
-            position--;
-            Rotate(-90);
+        if(Input.GetKeyDown(KeyCode.LeftArrow)) {
+            Rotate(120);
         }
-        if (Input.GetKeyDown(KeyCode.RightArrow) && position < 2) {
-            position++;
-            Rotate(90);
+        if (Input.GetKeyDown(KeyCode.RightArrow)) {
+            Rotate(-120);
         }
     }
 
     public void Rotate(float rotationValue) {
         Tween.Rotate(transform, new Vector3 (0, 0, rotationValue), Space.World, switchSpeedInSeconds, 0, Tween.EaseInOutStrong);
     }
+
 }

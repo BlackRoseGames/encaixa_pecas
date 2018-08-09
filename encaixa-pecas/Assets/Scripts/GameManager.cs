@@ -1,3 +1,4 @@
+using UnityEngine.SceneManagement;
 using UnityEngine;
 using TMPro;
 
@@ -76,19 +77,24 @@ public class GameManager : MonoBehaviour {
         block.GetComponent<Rigidbody2D>().angularVelocity = blockRotation;
 
         SpriteRenderer blockRenderer = block.GetComponent<SpriteRenderer>();
+        TrailRenderer blockTrail = block.GetComponent<TrailRenderer>();
         switch (index)
         {
             case 0:
                 block.tag = firstColorName;
                 blockRenderer.color = firstColor;
+                blockTrail.startColor = firstColor;
                 break;
             case 1:
                 block.tag = secondColorName;
                 blockRenderer.color = secondColor;
+                blockTrail.startColor = secondColor;
+
                 break;
             case 2:
                 block.tag = thirdColorName;
                 blockRenderer.color = thirdColor;
+                blockTrail.startColor = thirdColor;
                 break;
         }
     }
@@ -113,5 +119,9 @@ public class GameManager : MonoBehaviour {
         Debug.Log("Scored "+point+" point(s).");
         score += point;
         scoreText.SetText(score.ToString());
+    }
+
+    public void RestartScene() {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }

@@ -4,6 +4,8 @@ TextureImporter:
   fileIDToRecycleName:
     21300000: Border
     21300002: Block
+    21300004: Spritesheet_0
+    21300006: Spritesheet_1
   externalObjects: {}
   serializedVersion: 6
   mipmaps:
@@ -47,7 +49,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 80
+  spritePixelsToUnits: 120
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -86,41 +88,41 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Border
+      name: Spritesheet_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 200
-        height: 200
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 2
+        y: 60
+        width: 577
+        height: 344
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1f4e058f5179a4f4cbd181dc814e0795
+      spriteID: 834cac2e1628aa940a790fdb5b1295e7
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Block
+      name: Spritesheet_1
       rect:
         serializedVersion: 2
-        x: 200
-        y: 0
-        width: 80
-        height: 79
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 743
+        y: 70
+        width: 558
+        height: 322
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d5ebac8ceb4f6974cbe5122a96e382fe
+      spriteID: ce50123e99bd80f4a90dc744fd3d57ae
       vertices: []
       indices: 
       edges: []
