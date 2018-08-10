@@ -584,7 +584,7 @@ MonoBehaviour:
   firstColor: {r: 0, g: 1, b: 1, a: 1}
   secondColor: {r: 1, g: 0, b: 1, a: 1}
   thirdColor: {r: 1, g: 1, b: 0, a: 1}
-  spawnTimer: 3
+  spawnTimer: 0.7
   blockRotation: 90
   pointSound: {fileID: 487996050}
   gameOverSound: {fileID: 487996049}
