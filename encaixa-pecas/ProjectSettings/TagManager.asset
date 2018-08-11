@@ -7,6 +7,7 @@ TagManager:
   - Color1
   - Color2
   - Color3
+  - Fundo
   layers:
   - Default
   - TransparentFX
@@ -17,7 +18,7 @@ TagManager:
   - 
   - 
   - Block
-  - 
+  - Fundo
   - 
   - 
   - 
@@ -43,4 +44,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Fundo Sorting
+    uniqueID: 321140937
     locked: 0
