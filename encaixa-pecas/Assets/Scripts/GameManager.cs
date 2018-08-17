@@ -20,10 +20,12 @@ public class GameManager : MonoBehaviour {
     public Animator TransitionAnimator;
 
     [Header("Text References")]
+    [Tooltip("TextMeshPro para o texto de score")]
     public TextMeshProUGUI scoreText;
+    [Tooltip("TextMeshPro para a maior pontuacao")]
     public TextMeshProUGUI highScoreText;
+    [Tooltip("TextMeshPro para a pontuação final")]
     public TextMeshProUGUI finalScoreText;
-
 
     [Header("Game info")]
     [SerializeField]
@@ -37,14 +39,23 @@ public class GameManager : MonoBehaviour {
     public Color secondColor;
     string secondColorName = "Color2";
 
-    [Header("Color #2")]
+    [Header("Color #3")]
     public Color thirdColor;
     string thirdColorName = "Color3";
 
     [Header("Block Infos")]
+    [Tooltip("Tempo Inicial Para o bloco cair")]
     public float spawnTimer = 3f;
-    private float spawnCooldown = 0f;
+    [Tooltip("Tempo que é reduzido quando o numero X de blocos cair")]
+    public float spawnReductor;
+    [Tooltip("Tempo minimo para o bloco cair")]
+    public float spawnMinTimer = 1f;
+    [Tooltip("Rotação do bloco")]
     public float blockRotation = 10f;
+    private float spawnCooldown = 0f;
+    [Tooltip("O numero de blocos até aumentar a velocidade")]
+    public int spawnsToSpeedUp;
+    private int spawnsToSpeedUpCount = 0;
 
     [Header("Sounds")]
     public AudioSource pointSound;
@@ -55,6 +66,7 @@ public class GameManager : MonoBehaviour {
     private int highscore = 0;
 
     void Start() {
+        spawnCooldown = spawnTimer;
         GameOverCanvas.SetActive(false);
         highscore = PlayerPrefs.GetInt("highscore");
     }
@@ -71,6 +83,15 @@ public class GameManager : MonoBehaviour {
         if (!gameOver) {
             if (spawnCooldown <= 0) {
                 spawnRandomColorBlock();
+                spawnsToSpeedUpCount++;
+                if(spawnsToSpeedUp == spawnsToSpeedUpCount) {
+                    spawnsToSpeedUpCount = 0;
+                    if (spawnTimer > spawnMinTimer) {
+                        spawnTimer -= spawnReductor;
+                    } else if ( spawnTimer < spawnMinTimer) {
+                        spawnTimer = spawnMinTimer;
+                    }
+                }
                 spawnCooldown = spawnTimer;
             }
             spawnCooldown -= Time.deltaTime;
