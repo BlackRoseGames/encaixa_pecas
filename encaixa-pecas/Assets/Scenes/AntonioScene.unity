@@ -747,8 +747,11 @@ MonoBehaviour:
   firstColor: {r: 0, g: 1, b: 1, a: 1}
   secondColor: {r: 1, g: 0, b: 1, a: 1}
   thirdColor: {r: 1, g: 1, b: 0, a: 1}
-  spawnTimer: 0.7
+  spawnTimer: 2.2
+  spawnReductor: 0.035
+  spawnMinTimer: 0.4
   blockRotation: 0
+  spawnsToSpeedUp: 1
   pointSound: {fileID: 487996050}
   gameOverSound: {fileID: 487996049}
 --- !u!4 &487996048
@@ -1395,6 +1398,11 @@ Prefab:
         type: 2}
       propertyPath: m_SortingOrder
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 114016731505948264, guid: b1780b0a9dfa4c8468ea5e1a1a4b7326,
+        type: 2}
+      propertyPath: switchSpeedInSeconds
+      value: 0.05
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b1780b0a9dfa4c8468ea5e1a1a4b7326, type: 2}
