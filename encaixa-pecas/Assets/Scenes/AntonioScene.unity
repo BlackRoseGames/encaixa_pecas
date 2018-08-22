@@ -752,6 +752,9 @@ MonoBehaviour:
   spawnMinTimer: 0.4
   blockRotation: 0
   spawnsToSpeedUp: 1
+  redutionReductor: 0.005
+  pointToReductReductor: 5
+  minReductor: 0.01
   pointSound: {fileID: 487996050}
   gameOverSound: {fileID: 487996049}
 --- !u!4 &487996048
