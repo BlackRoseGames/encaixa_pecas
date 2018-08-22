@@ -24,8 +24,7 @@ public class Player : MonoBehaviour {
         if (!isRotating) {
             if(Input.GetKeyDown(KeyCode.LeftArrow)) {
                 Rotate(120);
-            }
-            if (Input.GetKeyDown(KeyCode.RightArrow)) {
+            }else if (Input.GetKeyDown(KeyCode.RightArrow)) {
                 Rotate(-120);
             }
         }
