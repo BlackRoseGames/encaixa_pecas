@@ -55,12 +55,7 @@ public class GameManager : MonoBehaviour {
     private float spawnCooldown = 0f;
     [Tooltip("O numero de blocos até aumentar a velocidade")]
     public int spawnsToSpeedUp;
-    [Tooltip("Numero do redutor do redutor")]
-    public float redutionReductor;
-    [Tooltip("Pontos necessários para diminuir o redutor")]
-    public int pointToReductReductor;
-    [Tooltip("Redutor minimo")]
-    public float minReductor; 
+    private int spawnsToSpeedUpCount = 0;
 
     [Header("Sounds")]
     public AudioSource pointSound;
@@ -88,18 +83,14 @@ public class GameManager : MonoBehaviour {
         if (!gameOver) {
             if (spawnCooldown <= 0) {
                 spawnRandomColorBlock();
-                if((score % spawnsToSpeedUp) == 0) {
+                spawnsToSpeedUpCount++;
+                if(spawnsToSpeedUp == spawnsToSpeedUpCount) {
+                    spawnsToSpeedUpCount = 0;
                     if (spawnTimer > spawnMinTimer) {
                         spawnTimer -= spawnReductor;
                     } else if ( spawnTimer < spawnMinTimer) {
                         spawnTimer = spawnMinTimer;
                     }
-                }
-                if ((score % pointToReductReductor) == 0 && spawnReductor > minReductor) {
-                    spawnReductor -= redutionReductor;
-                }
-                if (spawnReductor < minReductor) {
-                    spawnReductor = minReductor;
                 }
                 spawnCooldown = spawnTimer;
             }
