@@ -64,6 +64,8 @@ public class GameManager : MonoBehaviour {
     private bool gameOver = false;
     private bool reseting = false;
     private int highscore = 0;
+    private int sameColorCount = 0;
+    private int sameColorIndex = 0;
 
     void Start() {
         spawnCooldown = spawnTimer;
@@ -100,6 +102,19 @@ public class GameManager : MonoBehaviour {
 
     private void spawnRandomColorBlock() {
         int index = Random.Range(0, 3);
+        if (sameColorIndex != index) {
+            sameColorIndex = index;
+            sameColorCount = 0;
+        }
+        if (sameColorCount >= 3) {
+            while(index == sameColorIndex) {
+                index = Random.Range(0, 3);
+            }
+            sameColorIndex = index;
+            sameColorCount = 0;
+        }
+        sameColorCount++;
+        sameColorIndex = index;
         GameObject block = Instantiate(blockPrefab, spawnPosition.position, Quaternion.identity) as GameObject;
         block.GetComponent<Rigidbody2D>().angularVelocity = blockRotation;
 
