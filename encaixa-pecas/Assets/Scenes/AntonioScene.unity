@@ -188,7 +188,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.8773585, g: 0.87322, b: 0.87322, a: 1}
+  m_Color: {r: 0.8962264, g: 0.8962264, b: 0.8962264, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -744,9 +744,9 @@ MonoBehaviour:
   highScoreText: {fileID: 225786942}
   finalScoreText: {fileID: 471506343}
   score: 0
-  firstColor: {r: 0, g: 1, b: 1, a: 1}
-  secondColor: {r: 1, g: 0, b: 1, a: 1}
-  thirdColor: {r: 1, g: 1, b: 0, a: 1}
+  firstColor: {r: 0.19424175, g: 0.8229161, b: 0.9150943, a: 1}
+  secondColor: {r: 0.8962264, g: 0.2325116, b: 0.7484012, a: 1}
+  thirdColor: {r: 0.9056604, g: 0.8054706, b: 0.19223925, a: 1}
   spawnTimer: 2.2
   spawnReductor: 0.035
   spawnMinTimer: 0.55
