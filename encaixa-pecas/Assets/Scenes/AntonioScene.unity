@@ -124,7 +124,7 @@ GameObject:
   m_Layer: 0
   m_Name: SpawnPoint
   m_TagString: Untagged
-  m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -749,12 +749,9 @@ MonoBehaviour:
   thirdColor: {r: 1, g: 1, b: 0, a: 1}
   spawnTimer: 2.2
   spawnReductor: 0.035
-  spawnMinTimer: 0.4
+  spawnMinTimer: 0.1
   blockRotation: 0
   spawnsToSpeedUp: 1
-  redutionReductor: 0.005
-  pointToReductReductor: 5
-  minReductor: 0.01
   pointSound: {fileID: 487996050}
   gameOverSound: {fileID: 487996049}
 --- !u!4 &487996048
