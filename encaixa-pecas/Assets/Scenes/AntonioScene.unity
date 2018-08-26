@@ -749,7 +749,7 @@ MonoBehaviour:
   thirdColor: {r: 1, g: 1, b: 0, a: 1}
   spawnTimer: 2.2
   spawnReductor: 0.035
-  spawnMinTimer: 0.1
+  spawnMinTimer: 0.8
   blockRotation: 0
   spawnsToSpeedUp: 1
   pointSound: {fileID: 487996050}
