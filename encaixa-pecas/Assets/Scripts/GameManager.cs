@@ -60,6 +60,7 @@ public class GameManager : MonoBehaviour {
     [Header("Sounds")]
     public AudioSource pointSound;
     public AudioSource gameOverSound;
+    public AudioSource musicSound;
 
     private bool gameOver = false;
     private bool reseting = false;
@@ -175,8 +176,17 @@ public class GameManager : MonoBehaviour {
         }
     }
 
-     private IEnumerator RestartSceneTimer(float waitTime) {
+    private IEnumerator RestartSceneTimer(float waitTime) {
         yield return new WaitForSeconds(waitTime);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
      }
+
+    public void toggleSound(bool muted) {
+        pointSound.mute = muted;
+        gameOverSound.mute = muted;
+    }
+
+    public void toggleMusic() {
+
+    }
 }
