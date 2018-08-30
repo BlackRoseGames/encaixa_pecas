@@ -23,7 +23,8 @@ GameObject:
   - component: {fileID: 50969891754322130}
   - component: {fileID: 61150525730221402}
   - component: {fileID: 96627381425599804}
-  m_Layer: 0
+  - component: {fileID: 114321546479575500}
+  m_Layer: 8
   m_Name: Block
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -189,6 +190,18 @@ TrailRenderer:
   m_MinVertexDistance: 0.1
   m_Autodestruct: 1
   m_Emitting: 1
+--- !u!114 &114321546479575500
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1462405206015354}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1da10e69b35213e418e346826e0c1659, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timerParaDestruir: 1
 --- !u!212 &212194821968903650
 SpriteRenderer:
   m_ObjectHideFlags: 1
