@@ -411,6 +411,7 @@ GameObject:
   - component: {fileID: 314133539}
   - component: {fileID: 314133541}
   - component: {fileID: 314133540}
+  - component: {fileID: 314133542}
   m_Layer: 5
   m_Name: Program
   m_TagString: Untagged
@@ -556,6 +557,18 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 314133538}
   m_CullTransparentMesh: 0
+--- !u!114 &314133542
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 314133538}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0b0ff4eb69f547478408333b000e90d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: credits.coding
 --- !u!1 &411886816
 GameObject:
   m_ObjectHideFlags: 0
@@ -706,6 +719,7 @@ GameObject:
   - component: {fileID: 641797584}
   - component: {fileID: 641797586}
   - component: {fileID: 641797585}
+  - component: {fileID: 641797587}
   m_Layer: 5
   m_Name: TextMeshPro Text
   m_TagString: Untagged
@@ -853,6 +867,18 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 641797583}
   m_CullTransparentMesh: 0
+--- !u!114 &641797587
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 641797583}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0b0ff4eb69f547478408333b000e90d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: button.back
 --- !u!1 &742527793
 GameObject:
   m_ObjectHideFlags: 0
@@ -863,6 +889,7 @@ GameObject:
   - component: {fileID: 742527794}
   - component: {fileID: 742527796}
   - component: {fileID: 742527795}
+  - component: {fileID: 742527797}
   m_Layer: 5
   m_Name: TextMeshPro Text
   m_TagString: Untagged
@@ -1008,6 +1035,18 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 742527793}
   m_CullTransparentMesh: 0
+--- !u!114 &742527797
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 742527793}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0b0ff4eb69f547478408333b000e90d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: button.play
 --- !u!1 &1010304207
 GameObject:
   m_ObjectHideFlags: 0
@@ -1018,6 +1057,7 @@ GameObject:
   - component: {fileID: 1010304208}
   - component: {fileID: 1010304210}
   - component: {fileID: 1010304209}
+  - component: {fileID: 1010304211}
   m_Layer: 5
   m_Name: Arte
   m_TagString: Untagged
@@ -1165,6 +1205,18 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1010304207}
   m_CullTransparentMesh: 0
+--- !u!114 &1010304211
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1010304207}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0b0ff4eb69f547478408333b000e90d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: credits.art
 --- !u!1 &1053498502
 GameObject:
   m_ObjectHideFlags: 0
@@ -1243,11 +1295,11 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 525352732}
         m_MethodName: GoToGame
-        m_Mode: 1
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 2
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -1360,6 +1412,7 @@ GameObject:
   - component: {fileID: 1610284951}
   - component: {fileID: 1610284953}
   - component: {fileID: 1610284952}
+  - component: {fileID: 1610284954}
   m_Layer: 5
   m_Name: TextMeshPro Text
   m_TagString: Untagged
@@ -1505,6 +1558,18 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1610284950}
   m_CullTransparentMesh: 0
+--- !u!114 &1610284954
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1610284950}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0b0ff4eb69f547478408333b000e90d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: button.credits
 --- !u!1 &1709905992
 GameObject:
   m_ObjectHideFlags: 0
@@ -1515,6 +1580,7 @@ GameObject:
   - component: {fileID: 1709905993}
   - component: {fileID: 1709905995}
   - component: {fileID: 1709905994}
+  - component: {fileID: 1709905996}
   m_Layer: 5
   m_Name: Titulo
   m_TagString: Untagged
@@ -1660,6 +1726,18 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1709905992}
   m_CullTransparentMesh: 0
+--- !u!114 &1709905996
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1709905992}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0b0ff4eb69f547478408333b000e90d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: game.title
 --- !u!1 &1717888274
 GameObject:
   m_ObjectHideFlags: 0
@@ -1908,6 +1986,7 @@ GameObject:
   - component: {fileID: 2129193450}
   - component: {fileID: 2129193452}
   - component: {fileID: 2129193451}
+  - component: {fileID: 2129193453}
   m_Layer: 5
   m_Name: Audio
   m_TagString: Untagged
@@ -2053,3 +2132,15 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2129193449}
   m_CullTransparentMesh: 0
+--- !u!114 &2129193453
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2129193449}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0b0ff4eb69f547478408333b000e90d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: credits.audio

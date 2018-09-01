@@ -1,0 +1,48 @@
+{
+    "items": [
+        {
+            "key": "game.title",
+            "value": "Gira-Cor"
+        },
+        {
+            "key": "button.play",
+            "value": "Jogar"
+        },
+        {
+            "key": "button.credits",
+            "value": "Créditos"
+        },
+        {
+            "key": "credits.art",
+            "value": "Arte<br/>Caio Mascarenhas"
+        },
+        {
+            "key": "credits.coding",
+            "value": "Código<br/>Antonio Marco da Silva"
+        },
+        {
+            "key": "credits.audio",
+            "value": "Audío & Música<br/>Caroline Andrade"
+        },
+        {
+            "key": "button.back",
+            "value": "Voltar"
+        },
+        {
+            "key": "button.restart",
+            "value": "Reiniciar"
+        },
+        {
+            "key": "gameover",
+            "value": "Fim de jogo"
+        },
+        {
+            "key": "score",
+            "value": "Seu placar: {0}"
+        },
+        {
+            "key": "hiscore",
+            "value": "Placar máximo: {0}"
+        }
+    ]
+}

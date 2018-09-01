@@ -17,11 +17,11 @@ public class MenuManager : MonoBehaviour {
 		animCreditos.SetTrigger("Open");
 	}
 	
-    public void GoToGame() {
+    public void GoToGame(int sceneIndex) {
         if (!transition) {
             transitionAnimator.Play("transitionIn");
             transition = true;
-            StartCoroutine(WaitAndGoToScene(1f, 1));
+            StartCoroutine(WaitAndGoToScene(1f, sceneIndex));
         }
     }
 

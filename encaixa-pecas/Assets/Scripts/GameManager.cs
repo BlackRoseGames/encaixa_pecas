@@ -180,13 +180,4 @@ public class GameManager : MonoBehaviour {
         yield return new WaitForSeconds(waitTime);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
      }
-
-    public void toggleSound(bool muted) {
-        pointSound.mute = muted;
-        gameOverSound.mute = muted;
-    }
-
-    public void toggleMusic() {
-
-    }
 }
