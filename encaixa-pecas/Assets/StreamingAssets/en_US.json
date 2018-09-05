@@ -1,0 +1,48 @@
+{
+    "items": [
+        {
+            "key": "game.title",
+            "value": "ColorSpin"
+        },
+        {
+            "key": "button.play",
+            "value": "Play"
+        },
+        {
+            "key": "button.credits",
+            "value": "Credits"
+        },
+        {
+            "key": "credits.art",
+            "value": "Arte<br/>Caio Mascarenhas"
+        },
+        {
+            "key": "credits.coding",
+            "value": "Coding<br/>Antonio Marco da Silva"
+        },
+        {
+            "key": "credits.audio",
+            "value": "Audio & Music<br/>Caroline Andrade"
+        },
+        {
+            "key": "button.back",
+            "value": "Back"
+        },
+        {
+            "key": "button.restart",
+            "value": "Restart"
+        },
+        {
+            "key": "gameover",
+            "value": "Game Over"
+        },
+        {
+            "key": "score",
+            "value": "Your Score: {0}"
+        },
+        {
+            "key": "hiscore",
+            "value": "Highscore: {0}"
+        }
+    ]
+}
