@@ -119,24 +119,20 @@ public class GameManager : MonoBehaviour {
         GameObject block = Instantiate(blockPrefab, spawnPosition.position, Quaternion.identity) as GameObject;
         block.GetComponent<Rigidbody2D>().angularVelocity = blockRotation;
 
-        SpriteRenderer blockRenderer = block.GetComponent<SpriteRenderer>();
-        TrailRenderer blockTrail = block.GetComponent<TrailRenderer>();
-        switch (index)
-        {
+        BlockDestroyer blockObj = block.GetComponent<BlockDestroyer>();
+
+        switch (index) {
             case 0:
                 block.tag = firstColorName;
-                blockRenderer.color = firstColor;
-                blockTrail.startColor = firstColor;
+                blockObj.setColor(firstColor);
                 break;
             case 1:
                 block.tag = secondColorName;
-                blockRenderer.color = secondColor;
-                blockTrail.startColor = secondColor;
+                blockObj.setColor(secondColor);
                 break;
             case 2:
                 block.tag = thirdColorName;
-                blockRenderer.color = thirdColor;
-                blockTrail.startColor = thirdColor;
+                blockObj.setColor(thirdColor);
                 break;
         }
     }
