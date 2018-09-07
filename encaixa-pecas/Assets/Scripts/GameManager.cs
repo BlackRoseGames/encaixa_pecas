@@ -60,18 +60,24 @@ public class GameManager : MonoBehaviour {
     [Header("Sounds")]
     public AudioSource pointSound;
     public AudioSource gameOverSound;
-    public AudioSource musicSound;
+    public AudioSource musicSoundIntro;
+    public AudioSource musicSoundLoop;
 
     private bool gameOver = false;
     private bool reseting = false;
     private int highscore = 0;
     private int sameColorCount = 0;
     private int sameColorIndex = 0;
+    private bool newMusic = true;
 
     void Start() {
         spawnCooldown = spawnTimer;
         GameOverCanvas.SetActive(false);
         highscore = PlayerPrefs.GetInt("highscore");
+        if (musicSoundLoop == null) {
+            musicSoundIntro.loop = true;
+            newMusic = false;
+        }
     }
 
     public Color[] getListColors() {
@@ -98,6 +104,10 @@ public class GameManager : MonoBehaviour {
                 spawnCooldown = spawnTimer;
             }
             spawnCooldown -= Time.deltaTime;
+        }
+        if (!musicSoundIntro.isPlaying && newMusic) {
+            musicSoundLoop.Play();
+            newMusic = false;
         }
     }
 

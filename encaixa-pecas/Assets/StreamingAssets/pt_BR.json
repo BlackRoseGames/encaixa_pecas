@@ -14,15 +14,19 @@
         },
         {
             "key": "credits.art",
-            "value": "Arte<br/>Caio Mascarenhas"
+            "value": "Arte\nCaio Mascarenhas"
         },
         {
             "key": "credits.coding",
-            "value": "Código<br/>Antonio Marco da Silva"
+            "value": "Código\nAntonio Marco da Silva"
         },
         {
             "key": "credits.audio",
-            "value": "Audío & Música<br/>Caroline Andrade"
+            "value": "Audío & Música\nCaroline Andrade"
+        },
+        {
+            "key": "credits.special",
+            "value": "Agradecimentos Especiais\nLucca Andrade"
         },
         {
             "key": "button.back",
